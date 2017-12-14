@@ -9,9 +9,12 @@ const DEFAULT_BLOCKMAP = {
 const DEFAULT_PLACEMENT_VEC = new Vec3(0, 1, 0);
 
 /*
- * first yeild is the block count requirement
- * subsequence yeilds are the build instructions
- */
+    yield build objects
+    tcoord: target coord
+    scoord: standing coord
+    place: placement vector Vec3(0, 1, 0) for on top of
+    block: {id, meta} block type
+*/
 function* buildGen(mapFile, starting_vec, height, char2blockMap){
     if(char2blockMap == undefined){
         char2blockMap = DEFAULT_BLOCKMAP;
